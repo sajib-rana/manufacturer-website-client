@@ -5,9 +5,9 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
      useEffect(()=>{
-         fetch('tool.json')
-         .then(res =>res.json())
-         .then(data => setServices(data))
+         fetch("http://localhost:5000/service")
+           .then((res) => res.json())
+           .then((data) => setServices(data));
      },[])
     return (
       <div className="my-28">

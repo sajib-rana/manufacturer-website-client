@@ -11,7 +11,10 @@ const Service = ({service}) => {
         </figure>
         <div class="card-body">
           <h2 class="card-title">{service.name}</h2>
-          <p>{service.description}</p>
+          <p>Description:{service.description}</p>
+          <p>Price per unit:{service.pricePerUnit}</p>
+          <p>Available Quantity:{service.AvailableQuantity}</p>
+          <p>Minimum Order Quantity:{service.minOrderQuantity}</p>
           <div class="card-actions justify-end">
             <button class="btn btn-primary">Buy Now</button>
           </div>
