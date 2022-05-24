@@ -6,7 +6,7 @@
     "AvailableQuantity": 37,
     "minOrderQuantity": 5,
     "name": "Retcheting wrench",
-    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle. They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
+    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle.\r\n"
   },
   {
     "_id": 2,
@@ -15,7 +15,7 @@
     "AvailableQuantity": 25,
     "minOrderQuantity": 5,
     "name": "stanley pipe wrench",
-    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle. They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
+    "description": "They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
   },
   {
     "_id": 3,
@@ -24,7 +24,7 @@
     "AvailableQuantity": 24,
     "minOrderQuantity": 5,
     "name": "Unitool combination wrench",
-    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle. They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
+    "description": "They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
   },
   {
     "_id": 4,
@@ -33,7 +33,7 @@
     "AvailableQuantity": 36,
     "minOrderQuantity": 5,
     "name": "stanly Adjustable wrench",
-    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle. They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
+    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle.\r\n"
   },
   {
     "_id": 5,
@@ -42,7 +42,7 @@
     "AvailableQuantity": 26,
     "minOrderQuantity": 5,
     "name": "Wide Jaw Adjustable Wrench",
-    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle. They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
+    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle.\r\n"
   },
   {
     "_id": 6,
@@ -51,6 +51,6 @@
     "AvailableQuantity": 37,
     "minOrderQuantity": 5,
     "name": "Crescent Adjustable Wrench",
-    "description": "Straight pipe wrenches have a traditional design with a wrench head opening that is parallel to the handle. They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
+    "description": "They are used to turn threaded pipe and pipe fittings for installation or removal.\r\n"
   }
 ]
