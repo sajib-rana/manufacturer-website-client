@@ -6,7 +6,7 @@ import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Login = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
         signInWithEmailAndPassword,
@@ -21,17 +21,17 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect( () =>{
-        if (user || gUser) {
+        if (user || googleUser) {
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate])
+    }, [user, googleUser, from, navigate])
 
-    if (loading || gLoading) {
+    if (loading || googleLoading) {
         return <Loading></Loading>
     }
 
-    if(error || gError){
-        signInError= <p className='text-red-500'><small>{error?.message || gError?.message }</small></p>
+    if(error || googleError){
+        signInError= <p className='text-red-500'><small>{error?.message || googleError?.message }</small></p>
     }
 
     const onSubmit = data => {
@@ -97,7 +97,7 @@ const Login = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p><small>New to Doctors Portal <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New to Wrench Portal <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}

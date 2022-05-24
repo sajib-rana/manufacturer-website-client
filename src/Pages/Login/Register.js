@@ -10,7 +10,7 @@ import Loading from "../Shared/Loading";
 import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
   const {
     register,
     formState: { errors },
@@ -25,22 +25,22 @@ const SignUp = () => {
 
   let signInError;
 
-  if (loading || gLoading || updating) {
+  if (loading || googleLoading || updating) {
     return <Loading></Loading>;
   }
 
-  if (error || gError || updateError) {
+  if (error || googleError || updateError) {
     signInError = (
       <p className="text-red-500">
         <small>
-          {error?.message || gError?.message || updateError?.message}
+          {error?.message || googleError?.message || updateError?.message}
         </small>
       </p>
     );
   }
 
-  if (user || gUser) {
-    console.log(user || gUser);
+  if (user || googleUser) {
+    console.log(user || googleUser);
   }
 
   const onSubmit = async (data) => {
