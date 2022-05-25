@@ -18,7 +18,7 @@ const Login = () => {
     let signInError;
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    let from = location.state?.from?.pathname || "/home";
 
     useEffect( () =>{
         if (user || googleUser) {
@@ -97,7 +97,7 @@ const Login = () => {
                         {signInError}
                         <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
                     </form>
-                    <p><small>New to Wrench Portal <Link className='text-primary' to="/signup">Create New Account</Link></small></p>
+                    <p><small>New to Wrench Portal <Link className='text-primary' to="/register">Create New Account</Link></small></p>
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
