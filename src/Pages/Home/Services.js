@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Purchase from '../Purchase/Purchase';
 import Service from './Service';
 
 const Services = () => {
@@ -25,6 +26,7 @@ const Services = () => {
              ></Service>)
          }
         </div>
+      
       </div>
     );
 };
