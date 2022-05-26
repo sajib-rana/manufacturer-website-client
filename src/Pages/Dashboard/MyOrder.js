@@ -18,14 +18,16 @@ const MyOrder = () => {
         <table class="table w-full">
           <thead>
             <tr>
+              <th>Index</th>
               <th>Name</th>
               <th>Quantity</th>
               <th>Phone</th>
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
+            {orders.map((order, index) => (
               <tr>
+                <th>{index+1}</th>
                 <th>{order.name}</th>
                 <td>{order.quantity}</td>
                 <td>{order.phone}</td>
