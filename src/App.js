@@ -21,15 +21,9 @@ function App() {
     <div className="App">
       <Navbar></Navbar>
       <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route
-          path="/blogs"
-          element={
-            <RequireAuth>
-              <Blogs></Blogs>
-            </RequireAuth>
-          }
-        ></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route
           path="/service/:productId"
           element={

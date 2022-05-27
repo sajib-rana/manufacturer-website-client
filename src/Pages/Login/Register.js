@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useSignInWithGoogle,
@@ -18,6 +18,25 @@ const SignUp = () => {
   } = useForm();
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
+
+   useEffect( () =>{
+        const email = user?.user?.email;
+        const currentUser = {email: email};
+        if(email){
+            fetch(`http://localhost:5000/user/${email}`, {
+                method:'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body:JSON.stringify(currentUser)
+            })
+            .then(res=>res.json())
+            .then(data => {
+                console.log(data);  
+            })
+        }
+
+    }, [user]);
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
@@ -52,7 +71,7 @@ const SignUp = () => {
     <div className="flex h-screen justify-center items-center">
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="text-center text-2xl font-bold">Sign Up</h2>
+          <h2 className="text-center text-2xl font-bold">Register</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
