@@ -1,48 +1,52 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const Purchase = () => {
-    const { productId } = useParams();
-    const [service, setService] = useState({})
-    const [user] = useAuthState(auth);
-    useEffect(() => {
-      fetch(`http://localhost:5000/service/${productId}`)
-        .then((res) => res.json())
-        .then((data) => setService(data));
-    }, [productId, service]);
+  const { productId } = useParams();
+  const [service, setService] = useState({});
+  const [user] = useAuthState(auth);
 
-    const handleOrder = event => {
-      event.preventDefault();
+  useEffect(() => {
+    fetch(`http://localhost:5000/service/${productId}`)
+      .then((res) => res.json())
+      .then((data) => setService(data));
+  }, [productId, service]);
 
-      const number = event.target.number.value;
-      const order = {
-        name: user.displayName,
-        quantity: number,
-        customer: user.email,
-        phone: event.target.phone.value
-      }
+  const handleOrder = (event) => {
+    event.preventDefault();
 
-      fetch('http://localhost:5000/order', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify(order)
-      })
-      .then(res => res.json())
-      .then(data => console.log(data))
-      .catch(err => {
-        throw err
-      })
+    
+    const number = event.target.number.value;
 
-      event.target.number.value = ''
-      event.target.phone.value = "";
-    }
+    const order = {
+      name: user.displayName,
+      quantity: number,
+      customer: user.email,
+      phone: event.target.phone.value,
+    };
 
+    fetch("http://localhost:5000/order", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(order),
+    })
+      .then((res) => res.json())
+      .then((data) =>{ 
+      console.log(data)
+  })
+      .catch((err) => {
+        throw err;
+      });
 
+    event.target.number.value = "";
+    event.target.phone.value = "";
+  };
 
   return (
     <div>
